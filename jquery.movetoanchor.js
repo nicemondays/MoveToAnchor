@@ -14,7 +14,8 @@
 		var pluginName = "movetoanchor",
 			defaults = {
 				durationLimit: 500,
-				speed: 4
+				speed: 4,
+				easing: 'easeOutSine'
 			};
 
 		// The actual plugin constructor
@@ -46,7 +47,7 @@
 					scrollTop: $target.offset().top
 				},{
 					duration: (distance > this.settings.durationLimit) ? distance / this.settings.speed : this.settings.durationLimit, 
-					easing: 'easeOutSine'
+					easing: this.settings.easing
 				});
 			}
 		};
